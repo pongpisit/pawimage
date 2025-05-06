@@ -23,28 +23,90 @@
             path: "/src/alfa.jpg",
             url: "https://pawimage.pongpisit.com/src/alfa.jpg",
             class: "mt-3 rounded-lg"
+            // Original image without any transformation
           },
           {
             name: "Resize Width (200px)",
             path: "/cdn-cgi/image/width=200/src/alfa.jpg",
             class: "mt-3 rounded-lg"
+            // Resize to 200px width. Optional: height=X, fit=cover|contain|scale-down
           },
           ...[
-            { name: "Quality (50)", path: "/cdn-cgi/image/quality=50/src/alfa.jpg" },
-            { name: "Blur (20)", path: "/cdn-cgi/image/blur=20/src/alfa.jpg" },
-            { name: "Brightness (1.5)", path: "/cdn-cgi/image/brightness=1.5/src/alfa.jpg" },
-            { name: "Contrast (2.0)", path: "/cdn-cgi/image/contrast=2.0/src/alfa.jpg" },
-            { name: "Flip Horizontal", path: "/cdn-cgi/image/flip=h/src/alfa.jpg" },
-            { name: "Rotate 90°", path: "/cdn-cgi/image/rotate=90/src/alfa.jpg" },
-            { name: "Sharpen (3)", path: "/cdn-cgi/image/sharpen=3/src/alfa.jpg" },
-            { name: "Saturation (0 - grayscale)", path: "/cdn-cgi/image/saturation=0/src/alfa.jpg" },
-            { name: "Gamma (1.5)", path: "/cdn-cgi/image/gamma=1.5/src/alfa.jpg" },
-            { name: "Fit: cover (200x200)", path: "/cdn-cgi/image/fit=cover,width=200,height=200/src/alfa.jpg" },
-            { name: "Trim (20;30;20;0)", path: "/cdn-cgi/image/trim=20;30;20;0/src/alfa.jpg" },
-            { name: "Fit: pad (bg=gray)", path: "/cdn-cgi/image/fit=pad,width=200,height=200,background=gray/src/alfa.jpg" },
-            { name: "DPR (2x)", path: "/cdn-cgi/image/dpr=2,width=200/src/alfa.jpg" },
-            { name: "Format AVIF", path: "/cdn-cgi/image/format=avif/src/alfa.jpg" },
-            { name: "Metadata (none)", path: "/cdn-cgi/image/metadata=none/src/alfa.jpg" }
+            { 
+              name: "Quality (50)", 
+              path: "/cdn-cgi/image/quality=50/src/alfa.jpg"
+              // Compress image to 50% quality. Range: 1–100. Optional: format=auto|webp|avif
+            },
+            {
+              name: "Blur (20)", 
+              path: "/cdn-cgi/image/blur=20/src/alfa.jpg"
+              // Apply blur effect. Range: 1–250
+            },
+            {
+              name: "Brightness (1.5)", 
+              path: "/cdn-cgi/image/brightness=1.5/src/alfa.jpg"
+              // Brightness multiplier. 1.0 = original, >1 = brighter, <1 = darker
+            },
+            {
+              name: "Contrast (2.0)", 
+              path: "/cdn-cgi/image/contrast=2.0/src/alfa.jpg"
+              // Contrast multiplier. 1.0 = original, 2.0 = high contrast
+            },
+            {
+              name: "Flip Horizontal", 
+              path: "/cdn-cgi/image/flip=h/src/alfa.jpg"
+              // Flip horizontally. Options: h, v, hv
+            },
+            {
+              name: "Rotate 90°", 
+              path: "/cdn-cgi/image/rotate=90/src/alfa.jpg"
+              // Rotate clockwise by degrees: 90, 180, 270
+            },
+            {
+              name: "Sharpen (3)", 
+              path: "/cdn-cgi/image/sharpen=3/src/alfa.jpg"
+              // Sharpen image. Range: 0–10 (0 = no sharpen)
+            },
+            {
+              name: "Saturation (0 - grayscale)", 
+              path: "/cdn-cgi/image/saturation=0/src/alfa.jpg"
+              // Set saturation. 1.0 = original, 0 = grayscale
+            },
+            {
+              name: "Gamma (1.5)", 
+              path: "/cdn-cgi/image/gamma=1.5/src/alfa.jpg"
+              // Gamma correction. 1.0 = no change. >1 = brighter, <1 = darker
+            },
+            {
+              name: "Fit: cover (200x200)", 
+              path: "/cdn-cgi/image/fit=cover,width=200,height=200/src/alfa.jpg"
+              // Resize and crop to cover 200x200 box. Optional: gravity=center|auto
+            },
+            {
+              name: "Trim (20;30;20;0)", 
+              path: "/cdn-cgi/image/trim=20;30;20;0/src/alfa.jpg"
+              // Trim pixels from edges: top;right;bottom;left
+            },
+            {
+              name: "Fit: pad (bg=gray)", 
+              path: "/cdn-cgi/image/fit=pad,width=200,height=200,background=gray/src/alfa.jpg"
+              // Pad image to 200x200 with gray background. Optional: background color
+            },
+            {
+              name: "DPR (2x)", 
+              path: "/cdn-cgi/image/dpr=2,width=200/src/alfa.jpg"
+              // Device Pixel Ratio. 2 = retina display. Often used with width
+            },
+            {
+              name: "Format AVIF", 
+              path: "/cdn-cgi/image/format=avif/src/alfa.jpg"
+              // Convert image to AVIF. Optional: format=webp|jpeg|baseline-jpeg|auto
+            },
+            {
+              name: "Metadata (none)", 
+              path: "/cdn-cgi/image/metadata=none/src/alfa.jpg"
+              // Strip metadata (EXIF). Options: none, keep, copyright
+            }
           ].map(t => ({ ...t, class: "mt-3 rounded-lg w-full max-h-[500px] object-contain" }))
         ];
 
