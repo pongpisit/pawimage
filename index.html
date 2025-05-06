@@ -105,12 +105,26 @@
             name: "Metadata (none)",
             path: "/cdn-cgi/image/metadata=none/src/alfa.jpg",
             explanation: "Strips all EXIF metadata (like GPS, camera info)."
+          },
+          {
+            name: "Overlay: Cloudflare Logo",
+            path: "/worker/overlay-logo.jpg",
+            url: "https://pawimage.pongpisit.com/worker/overlay-logo.jpg",
+            explanation: "Adds Cloudflare logo in bottom-right using Workers + `draw`. Uses opacity 0.8.",
+            class: "mt-3 rounded-lg w-full max-h-[500px] object-contain"
+          },
+          {
+            name: "Watermark: Repeated Logo",
+            path: "/worker/watermark-tile.jpg",
+            url: "https://pawimage.pongpisit.com/worker/watermark-tile.jpg",
+            explanation: "Tiled watermark using Cloudflare logo with opacity 0.2.",
+            class: "mt-3 rounded-lg w-full max-h-[500px] object-contain"
           }
         ];
 
         transformations.forEach(t => {
           const src = t.url || `https://pawimage.pongpisit.com${t.path}`;
-          const imgClass = t.name === "Resize Width (200px)" ? "mt-3 rounded-lg" : "mt-3 rounded-lg w-full max-h-[500px] object-contain";
+          const imgClass = t.name === "Resize Width (200px)" ? "mt-3 rounded-lg" : (t.class || "mt-3 rounded-lg w-full max-h-[500px] object-contain");
           document.write(`
             <div class="bg-white rounded-xl shadow p-6">
               <h2 class="text-xl font-semibold text-[#f38020]">${t.name}</h2>
