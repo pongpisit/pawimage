@@ -106,20 +106,6 @@
             path: "/cdn-cgi/image/metadata=none/src/alfa.jpg",
             explanation: "Removes all EXIF metadata (GPS, camera info)."
           },
-          {
-            name: "Overlay: Cloudflare Logo",
-            path: "/worker/overlay-logo.jpg",
-            url: "https://pawimage.pongpisit.com/worker/overlay-logo.jpg",
-            explanation: "Adds Cloudflare logo to bottom-right using Workers `draw[]`. Logo is semi-transparent (opacity 0.8).",
-            class: "mt-3 rounded-lg w-full max-h-[500px] object-contain"
-          },
-          {
-            name: "Watermark: Repeated Badge",
-            path: "https://pawimage.pongpisit.com/worker/watermarked-alfa.jpg",
-            url: "https://pawimage.pongpisit.com/src/alfa.jpg",
-            explanation: "Applies tiled watermark using Cloudflare badge via `draw[]` with repeat and 0.2 opacity.",
-            class: "mt-3 rounded-lg w-full max-h-[500px] object-contain"
-          }
         ];
 
         transformations.forEach(t => {
