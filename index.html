@@ -16,36 +16,45 @@
 
   <main class="max-w-6xl mx-auto px-4 py-10">
     <section class="grid gap-8">
-      <!-- Transformation blocks -->
-      <!-- All use the same responsive image class -->
       <script>
         const transformations = [
-          { name: "Original Image", path: "/src/alfa.jpg", url: "https://pawimage.pongpisit.com/src/alfa.jpg" },
-          { name: "Resize Width (200px)", path: "/cdn-cgi/image/width=200/src/alfa.jpg" },
-          { name: "Quality (50)", path: "/cdn-cgi/image/quality=50/src/alfa.jpg" },
-          { name: "Blur (20)", path: "/cdn-cgi/image/blur=20/src/alfa.jpg" },
-          { name: "Brightness (1.5)", path: "/cdn-cgi/image/brightness=1.5/src/alfa.jpg" },
-          { name: "Contrast (2.0)", path: "/cdn-cgi/image/contrast=2.0/src/alfa.jpg" },
-          { name: "Flip Horizontal", path: "/cdn-cgi/image/flip=h/src/alfa.jpg" },
-          { name: "Rotate 90°", path: "/cdn-cgi/image/rotate=90/src/alfa.jpg" },
-          { name: "Sharpen (3)", path: "/cdn-cgi/image/sharpen=3/src/alfa.jpg" },
-          { name: "Saturation (0 - grayscale)", path: "/cdn-cgi/image/saturation=0/src/alfa.jpg" },
-          { name: "Gamma (1.5)", path: "/cdn-cgi/image/gamma=1.5/src/alfa.jpg" },
-          { name: "Fit: cover (200x200)", path: "/cdn-cgi/image/fit=cover,width=200,height=200/src/alfa.jpg" },
-          { name: "Trim (20;30;20;0)", path: "/cdn-cgi/image/trim=20;30;20;0/src/alfa.jpg" },
-          { name: "Fit: pad (bg=gray)", path: "/cdn-cgi/image/fit=pad,width=200,height=200,background=gray/src/alfa.jpg" },
-          { name: "DPR (2x)", path: "/cdn-cgi/image/dpr=2,width=200/src/alfa.jpg" },
-          { name: "Format AVIF", path: "/cdn-cgi/image/format=avif/src/alfa.jpg" },
-          { name: "Metadata (none)", path: "/cdn-cgi/image/metadata=none/src/alfa.jpg" }
+          {
+            name: "Original Image",
+            path: "/src/alfa.jpg",
+            url: "https://pawimage.pongpisit.com/src/alfa.jpg",
+            class: "mt-3 rounded-lg"
+          },
+          {
+            name: "Resize Width (200px)",
+            path: "/cdn-cgi/image/width=200/src/alfa.jpg",
+            class: "mt-3 rounded-lg"
+          },
+          ...[
+            { name: "Quality (50)", path: "/cdn-cgi/image/quality=50/src/alfa.jpg" },
+            { name: "Blur (20)", path: "/cdn-cgi/image/blur=20/src/alfa.jpg" },
+            { name: "Brightness (1.5)", path: "/cdn-cgi/image/brightness=1.5/src/alfa.jpg" },
+            { name: "Contrast (2.0)", path: "/cdn-cgi/image/contrast=2.0/src/alfa.jpg" },
+            { name: "Flip Horizontal", path: "/cdn-cgi/image/flip=h/src/alfa.jpg" },
+            { name: "Rotate 90°", path: "/cdn-cgi/image/rotate=90/src/alfa.jpg" },
+            { name: "Sharpen (3)", path: "/cdn-cgi/image/sharpen=3/src/alfa.jpg" },
+            { name: "Saturation (0 - grayscale)", path: "/cdn-cgi/image/saturation=0/src/alfa.jpg" },
+            { name: "Gamma (1.5)", path: "/cdn-cgi/image/gamma=1.5/src/alfa.jpg" },
+            { name: "Fit: cover (200x200)", path: "/cdn-cgi/image/fit=cover,width=200,height=200/src/alfa.jpg" },
+            { name: "Trim (20;30;20;0)", path: "/cdn-cgi/image/trim=20;30;20;0/src/alfa.jpg" },
+            { name: "Fit: pad (bg=gray)", path: "/cdn-cgi/image/fit=pad,width=200,height=200,background=gray/src/alfa.jpg" },
+            { name: "DPR (2x)", path: "/cdn-cgi/image/dpr=2,width=200/src/alfa.jpg" },
+            { name: "Format AVIF", path: "/cdn-cgi/image/format=avif/src/alfa.jpg" },
+            { name: "Metadata (none)", path: "/cdn-cgi/image/metadata=none/src/alfa.jpg" }
+          ].map(t => ({ ...t, class: "mt-3 rounded-lg w-full max-h-[500px] object-contain" }))
         ];
 
         transformations.forEach(t => {
+          const src = t.url || `https://pawimage.pongpisit.com${t.path}`;
           document.write(`
             <div class="bg-white rounded-xl shadow p-6">
               <h2 class="text-xl font-semibold text-[#f38020]">${t.name}</h2>
               <code class="text-sm bg-gray-100 rounded px-2 py-1 block mt-2">${t.path}</code>
-              <img class="mt-3 rounded-lg max-w-full w-full max-h-[500px] object-contain"
-                src="https://pawimage.pongpisit.com${t.path.replace('/src', '/src')}" alt="${t.name}" />
+              <img class="${t.class}" src="${src}" alt="${t.name}" />
             </div>
           `);
         });
