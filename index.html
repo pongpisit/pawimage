@@ -1,80 +1,97 @@
 <!DOCTYPE html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <title>Cloudflare Image Transformation Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloudflare Image Transformation Showcase</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        .image-container { margin-bottom: 20px; }
-        img { border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { margin-top: 40px; }
+        .image-container { margin-bottom: 30px; }
+        img { border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 100%; }
+        h2 { margin-top: 30px; }
         code { background-color: #f4f4f4; padding: 2px 4px; border-radius: 4px; }
     </style>
 </head>
 <body>
 
-<h1>Cloudflare Image Transformation Demo</h1>
+<h1>Cloudflare Image Transformation Showcase</h1>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Original Image</h2>
-    <img src=\"https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Original\" width=\"400\">
+    <img src="https://pawimage.pongpisit.com/src/alfa.jpg" alt="Original">
 </div>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Resize Width (200px)</h2>
-    <code>/cdn-cgi/image/width=200/</code><br>
-    <img src=\"/cdn-cgi/image/width=200/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Resized Width\">
+    <code>/cdn-cgi/image/width=200/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/width=200/src/alfa.jpg" alt="Resize 200px">
 </div>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Quality (50)</h2>
-    <code>/cdn-cgi/image/quality=50/</code><br>
-    <img src=\"/cdn-cgi/image/quality=50/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Quality 50\" width=\"400\">
+    <code>/cdn-cgi/image/quality=50/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/quality=50/src/alfa.jpg" alt="Quality 50">
 </div>
 
-<div class=\"image-container\">
-    <h2>Blur (10)</h2>
-    <code>/cdn-cgi/image/blur=10/</code><br>
-    <img src=\"/cdn-cgi/image/blur=10/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Blur 10\" width=\"400\">
+<div class="image-container">
+    <h2>Blur (20)</h2>
+    <code>/cdn-cgi/image/blur=20/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/blur=20/src/alfa.jpg" alt="Blur 20">
 </div>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Brightness (1.5)</h2>
-    <code>/cdn-cgi/image/brightness=1.5/</code><br>
-    <img src=\"/cdn-cgi/image/brightness=1.5/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Brightness 1.5\" width=\"400\">
+    <code>/cdn-cgi/image/brightness=1.5/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/brightness=1.5/src/alfa.jpg" alt="Brightness 1.5">
 </div>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Contrast (2.0)</h2>
-    <code>/cdn-cgi/image/contrast=2.0/</code><br>
-    <img src=\"/cdn-cgi/image/contrast=2.0/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Contrast 2.0\" width=\"400\">
+    <code>/cdn-cgi/image/contrast=2.0/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/contrast=2.0/src/alfa.jpg" alt="Contrast 2.0">
 </div>
 
-<div class=\"image-container\">
-    <h2>Flip (horizontal)</h2>
-    <code>/cdn-cgi/image/flip=h/</code><br>
-    <img src=\"/cdn-cgi/image/flip=h/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Flipped Horizontal\" width=\"400\">
+<div class="image-container">
+    <h2>Flip Horizontal</h2>
+    <code>/cdn-cgi/image/flip=h/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/flip=h/src/alfa.jpg" alt="Flip Horizontal">
 </div>
 
-<div class=\"image-container\">
-    <h2>Rotate (90 degrees)</h2>
-    <code>/cdn-cgi/image/rotate=90/</code><br>
-    <img src=\"/cdn-cgi/image/rotate=90/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Rotated 90\" width=\"400\">
+<div class="image-container">
+    <h2>Rotate 90°</h2>
+    <code>/cdn-cgi/image/rotate=90/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/rotate=90/src/alfa.jpg" alt="Rotate 90">
 </div>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Sharpen (3)</h2>
-    <code>/cdn-cgi/image/sharpen=3/</code><br>
-    <img src=\"/cdn-cgi/image/sharpen=3/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Sharpen 3\" width=\"400\">
+    <code>/cdn-cgi/image/sharpen=3/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/sharpen=3/src/alfa.jpg" alt="Sharpen 3">
 </div>
 
-<div class=\"image-container\">
+<div class="image-container">
     <h2>Saturation (0 - grayscale)</h2>
-    <code>/cdn-cgi/image/saturation=0/</code><br>
-    <img src=\"/cdn-cgi/image/saturation=0/https://pawimage.pongpisit.com/src/alfa.jpg\" alt=\"Grayscale\" width=\"400\">
+    <code>/cdn-cgi/image/saturation=0/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/saturation=0/src/alfa.jpg" alt="Grayscale">
+</div>
+
+<div class="image-container">
+    <h2>Border (5px black)</h2>
+    <code>/cdn-cgi/image/border=5,background=black/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/border=5,background=black/src/alfa.jpg" alt="Border 5px">
+</div>
+
+<div class="image-container">
+    <h2>Gamma (1.5)</h2>
+    <code>/cdn-cgi/image/gamma=1.5/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/gamma=1.5/src/alfa.jpg" alt="Gamma 1.5">
+</div>
+
+<div class="image-container">
+    <h2>Fit: cover (200x200)</h2>
+    <code>/cdn-cgi/image/fit=cover,width=200,height=200/src/alfa.jpg</code><br>
+    <img src="https://pawimage.pongpisit.com/cdn-cgi/image/fit=cover,width=200,height=200/src/alfa.jpg" alt="Cover 200x200">
 </div>
 
 </body>
 </html>
-
